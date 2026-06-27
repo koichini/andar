@@ -1,0 +1,28 @@
+# Godot 4 自動生成キャッシュ（インポートデータ本体）
+.godot/
+.git/
+
+# エクスポートビルド成果物
+build/
+*.apk
+*.aab
+*.ipa
+*.exe
+*.pck
+*.zip
+
+# macOS
+.DS_Store
+._*
+.Spotlight-V100
+.Trashes
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# IDEs
+.idea/
+.vscode/
