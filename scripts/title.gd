@@ -2,6 +2,7 @@ extends Control
 
 
 func _ready() -> void:
+	$Background.color = Constants.COLORS.bg
 	$VBoxContainer/StartButton.pressed.connect(_on_start_pressed)
 	$VBoxContainer/QuitButton.pressed.connect(_on_quit_pressed)
 
