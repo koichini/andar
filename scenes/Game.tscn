@@ -24,6 +24,9 @@ texture = SubResource("CompressedTexture2D_qbsmt")
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_cpr0p")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cpr0p"]
+size = Vector2(20, 39.5)
+
 [node name="Game" type="Node2D" unique_id=298688422]
 script = ExtResource("1")
 
@@ -59,3 +62,15 @@ limit_bottom = 400
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1475889975]
 tile_map_data = PackedByteArray("AAAGAA4AAAABAAEAAAAHAA4AAAABAAEAAAAIAA4AAAABAAEAAAAJAA4AAAABAAEAAAAKAA4AAAABAAEAAAALAA4AAAABAAEAAAAMAA4AAAABAAEAAAANAA4AAAABAAEAAAAQAA4AAAABAAEAAAARAA4AAAABAAEAAAASAA4AAAABAAEAAAATAA4AAAABAAEAAAAUAA4AAAABAAEAAAAVAA4AAAABAAEAAAAWAA4AAAABAAEAAAAXAA4AAAABAAEAAAAYAA4AAAABAAEAAAAZAA4AAAABAAEAAAAaAA4AAAABAAEAAAA=")
 tile_set = SubResource("TileSet_78awf")
+
+[node name="Goal" type="Area2D" parent="." unique_id=1172976853]
+position = Vector2(427, 184)
+
+[node name="ColorRect" type="ColorRect" parent="Goal" unique_id=649151122]
+offset_right = 20.0
+offset_bottom = 40.0
+color = Color(1, 1, 0, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Goal" unique_id=1581786713]
+position = Vector2(10, 20)
+shape = SubResource("RectangleShape2D_cpr0p")
