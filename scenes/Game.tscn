@@ -27,6 +27,9 @@ sources/0 = SubResource("TileSetAtlasSource_cpr0p")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cpr0p"]
 size = Vector2(20, 39.5)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_78awf"]
+size = Vector2(303.1764, 11.803835)
+
 [node name="Game" type="Node2D" unique_id=298688422]
 script = ExtResource("1")
 
@@ -74,3 +77,16 @@ color = Color(1, 1, 0, 1)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Goal" unique_id=1581786713]
 position = Vector2(10, 20)
 shape = SubResource("RectangleShape2D_cpr0p")
+
+[node name="DeathArea" type="Area2D" parent="." unique_id=1420962770]
+position = Vector2(0, 260)
+
+[node name="ColorRect" type="ColorRect" parent="DeathArea" unique_id=608783514]
+offset_right = 800.0
+offset_bottom = 20.0
+color = Color(1, 0.22352941, 1, 0.7294118)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DeathArea" unique_id=1364120106]
+position = Vector2(400.31683, 10.184509)
+scale = Vector2(2.636638, 1.6631006)
+shape = SubResource("RectangleShape2D_78awf")
