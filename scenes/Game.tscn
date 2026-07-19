@@ -78,6 +78,16 @@ color = Color(1, 1, 0, 1)
 position = Vector2(10, 20)
 shape = SubResource("RectangleShape2D_cpr0p")
 
+[node name="HUD" type="CanvasLayer" parent="."]
+
+[node name="StrengthLabel" type="Label" parent="HUD"]
+offset_left = 4.0
+offset_top = 2.0
+offset_right = 120.0
+offset_bottom = 18.0
+theme_override_font_sizes/font_size = 12
+text = "Strength: 2"
+
 [node name="DeathArea" type="Area2D" parent="." unique_id=1420962770]
 position = Vector2(0, 260)
 
