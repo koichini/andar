@@ -3,6 +3,22 @@
 強度を使った platformer(Godot 4.6.2 / GDScript)。
 リポジトリ共通ルールは `godot-lab/CLAUDE.md` に準拠する。
 
+## 開発ノート(zettelkasten)
+
+設計メモ・実装ログ・次タスクは別リポジトリの zettelkasten で管理している。
+コード(このリポジトリ)とノート(zettelkasten)の 2 か所で 1 プロジェクトを構成する。
+
+- 場所: `~/zettelkasten/DEV/game/andar/`
+  - `README.md` … 索引。NOTE セクションに各ノートへのリンクを新しい順で並べる
+  - `NN.md`(01, 02, ...) … 番号付きの実装ログ。最新番号が直近の作業・次タスク
+- 進捗確認・次タスク提案のときは、コードに加えて最新の `NN.md` を読む
+  - 未チェックの `- [ ]` が次にやる候補。コードと食い違う場合は断定せずユーザーに確認する
+- ノートの編集はユーザーの依頼があったときのみ行う
+  - 書式は frontmatter(title / date / tags) + `## IDEA` / `## NOTE` / `## DATA` / `## LINK`
+  - `## LINK` には `[andar](DEV/game/andar/README.md)` を置く
+  - 新規ノートを作ったら `README.md` の NOTE 先頭にリンクを追加する
+  - zettelkasten 側の全体ルールは `~/zettelkasten/CLAUDE.md` を参照(必要時のみ読む)
+
 ## ゲームコンセプト
 
 - 強度(1~3)を選んで横移動・ジャンプするアクション
