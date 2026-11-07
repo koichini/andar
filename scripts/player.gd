@@ -2,12 +2,12 @@ extends CharacterBody2D
 
 signal strength_changed(level: int)
 
-const JUMP_SPEED := -300.0
+const JUMP_SPEED := -170.0
 const GRAVITY := 600.0
-const STRENGTH_FACTORS := [0.6, 1.0, 1.5]
+const STRENGTH_FACTORS := [1.0, 1.4, 1.7]
 
-@export var impulse_speed := 250.0
-@export var friction := 800.0
+@export var impulse_speed := 170.0
+@export var friction := 830.0
 
 var strength := 2
 
