@@ -1,0 +1,68 @@
+[gd_scene format=4 uid="uid://dds20f673i511"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_qbsmt"]
+load_path = "res://.godot/imported/andar_tilemap.png-572c545b1ecfbda076998599521bf57a.ctex"
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cpr0p"]
+texture = SubResource("CompressedTexture2D_qbsmt")
+1:1/0 = 0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:1/0 = 0
+2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, -8, 8, 8, 8, 8, -8)
+3:1/0 = 0
+3:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, -8, 8, 8, 8, 8, -8)
+
+[sub_resource type="TileSet" id="TileSet_78awf"]
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_cpr0p")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cpr0p"]
+size = Vector2(20, 39.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_78awf"]
+size = Vector2(303.1764, 11.803835)
+
+[node name="Level" type="Node2D" unique_id=557966506]
+
+[node name="BackGround" type="ColorRect" parent="." unique_id=336152901]
+offset_top = 1.0
+offset_right = 640.0
+offset_bottom = 481.0
+color = Color(0, 0, 0, 1)
+
+[node name="Label" type="Label" parent="." unique_id=1708908029]
+offset_left = 150.0
+offset_right = 312.0
+offset_bottom = 24.0
+theme_override_font_sizes/font_size = 12
+text = "Game Screen (Esc to return)"
+horizontal_alignment = 1
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1282318662]
+tile_map_data = PackedByteArray("AAAGAA4AAAABAAEAAAAHAA4AAAABAAEAAAAIAA4AAAABAAEAAAAJAA4AAAABAAEAAAAKAA4AAAABAAEAAAALAA4AAAABAAEAAAAMAA4AAAABAAEAAAANAA4AAAABAAEAAAAQAA4AAAABAAEAAAARAA4AAAABAAEAAAASAA4AAAABAAEAAAATAA4AAAABAAEAAAAUAA4AAAABAAEAAAAVAA4AAAABAAEAAAAWAA4AAAABAAEAAAAXAA4AAAABAAEAAAAYAA4AAAABAAEAAAAZAA4AAAABAAEAAAAaAA4AAAABAAEAAAA=")
+tile_set = SubResource("TileSet_78awf")
+
+[node name="Goal" type="Area2D" parent="." unique_id=485262364]
+position = Vector2(427, 184)
+
+[node name="ColorRect" type="ColorRect" parent="Goal" unique_id=239865215]
+offset_right = 20.0
+offset_bottom = 40.0
+color = Color(1, 1, 0, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Goal" unique_id=1001184335]
+position = Vector2(10, 20)
+shape = SubResource("RectangleShape2D_cpr0p")
+
+[node name="DeathArea" type="Area2D" parent="." unique_id=1743057020]
+position = Vector2(0, 260)
+
+[node name="ColorRect" type="ColorRect" parent="DeathArea" unique_id=523817018]
+offset_right = 800.0
+offset_bottom = 20.0
+color = Color(1, 0.22352941, 1, 0.7294118)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DeathArea" unique_id=833811475]
+position = Vector2(400.31683, 10.184509)
+scale = Vector2(2.636638, 1.6631006)
+shape = SubResource("RectangleShape2D_78awf")

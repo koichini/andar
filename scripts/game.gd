@@ -6,8 +6,8 @@ func _input(event: InputEvent) -> void:
 
 func _ready() -> void:
 	GameState.reset()
-	$Goal.body_entered.connect(_on_goal_entered)
-	$DeathArea.body_entered.connect(_on_death_entered)
+	$Level/Goal.body_entered.connect(_on_goal_entered)
+	$Level/DeathArea.body_entered.connect(_on_death_entered)
 	$Player.strength_changed.connect(_on_strength_changed)
 	_on_strength_changed($Player.strength)
 
