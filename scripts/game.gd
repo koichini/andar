@@ -1,7 +1,7 @@
 extends Node2D
 
 @onready var player: Node2D = $Player
-@onready var spawn_point: Marker2D = $Level/SpawnPoint
+@onready var level_root: Node2D = $LevelRoot
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("ui_cancel"):
@@ -9,11 +9,18 @@ func _input(event: InputEvent) -> void:
 
 func _ready() -> void:
 	GameState.reset()
-	$Level/Goal.body_entered.connect(_on_goal_entered)
-	$Level/DeathArea.body_entered.connect(_on_death_entered)
+	var level := _load_level(GameState.level)
+	level.get_node("Goal").body_entered.connect(_on_goal_entered)
+	level.get_node("DeathArea").body_entered.connect(_on_death_entered)
 	player.strength_changed.connect(_on_strength_changed)
-	player.global_position = spawn_point.global_position
+	player.global_position = level.get_node("SpawnPoint").global_position
 	_on_strength_changed(player.strength)
+
+func _load_level(n: int) -> Node2D:
+	var scene: PackedScene = load("res://scenes/levels/%02d.tscn" % n)
+	var level: Node2D = scene.instantiate()
+	level_root.add_child(level)
+	return level
 
 func _on_goal_entered(body: Node2D) -> void:
 	if body is CharacterBody2D:
